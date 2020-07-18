@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+	
+<title>Astronomer's Timeline Test</title>
+	
+<style type="text/css">
+body,td,th {
+	background-color: #000000;
+	color: #FFFFCC;
+}
+.slider {
+	-webkit-appearance: none;  /* Override default CSS styles */
+	width: 800px;
+	appearance: none;
+	width: 100%; /* Full-width */
+	height: 25px; /* Specified height */
+	background: #222222; /* Grey background */
+	outline: none; /* Remove outline */
+}
+
+</style>
+
+<script language="javascript" src="suncalc.js"></script>
+<script language="javascript" src="astrotimeline.js"></script>
+<script>
+	var tl = null;
+	var now = new Date();
+	var timeSlider, debugInfo;
+	var timeZone = 'US/Mountain';
+	
+	function updateDebugInfo() {
+		debugInfo.innerHTML = tl.debugInfo();		
+	}
+	
+	function updateSliders() {
+		timeSlider.value = now.getHours()*60 + now.getMinutes();
+		var year = now.getFullYear();
+		dateSlider.value = Math.floor((now.getTime() - (new Date(year + '-01-01T00:00:00').getTime()))/86400000);
+		yearSlider.value = year;
+	}
+	
+	function updateNow() {
+		// TODO: properly handle different time zones
+		var ms = new Date(yearSlider.value + '-01-01T00:00:00').getTime(); // - tl.dateTime.getTimezoneOffset()*60*1000; //12*60*60*1000;
+		ms += dateSlider.value*86400000;
+		ms += timeSlider.value*60000;
+		tl.dateTime = new Date(ms);
+		tl.update();
+		updateDebugInfo();
+	}
+	
+	function handleTimeSliderChange() {
+		updateNow();
+	}
+	
+	function handleDateSliderChange() {
+		updateNow();
+		dt = tl.dateTime;
+		tl = new AstroTimeline(32.90, -105.53, 0, timeZone, 'en-US', 8, 'astrotimeline', dt);
+		tl.stop();
+		updateNow();
+	}
+	
+	function setup() {
+		timeSlider = document.getElementById('timeSlider');
+		dateSlider = document.getElementById('dateSlider');
+		yearSlider = document.getElementById('yearSlider');
+		debugInfo = document.getElementById('debugInfo');
+		
+		tl = new AstroTimeline(32.90, -105.53, 0, timeZone, 'en-US', 8, 'astrotimeline');
+		now = tl.dateTime;
+		tl.stop();
+		
+		updateSliders();
+		updateDebugInfo();		
+	}
+	
+	
+</script>
+</head>
+
+<body onLoad="setup();">
+	<table width="800" style="border-width: 1px; border-color: grey;">
+		<tr><td colspan="99">The timeline:</td></tr>
+		<tr><td colspan="99"><div id="astrotimeline"></div></td></tr>
+		<tr>
+			<td>Time:</td>
+			<td width="90%"><input id="timeSlider" type="range" min="0" max="1440" value="720"
+								   class="slider" onInput="handleDateSliderChange();"></td>
+		</tr>
+		<tr>
+			<td>Date:</td>
+			<td width="90%"><input id="dateSlider" type="range" min="0" max="365" value="57" class="slider"
+								   onInput="handleDateSliderChange();"></td>
+		</tr>
+		<tr>
+			<td>Year:</td>
+			<td width="90%"><input id="yearSlider" type="range" min="1970" max="2070" value="2020" class="slider" 
+								   onInput="handleDateSliderChange();"></td>
+		</tr>
+		<tr><td colspan="99">
+			<button type="button" onClick="tl.start();">Now</button>
+			<button type="button" onClick="tl.stop();">Stop</button>
+		</td></tr>
+		<tr><td colspan="99">Debug Info:</td></tr>
+		<tr><td colspan="99"><div id="debugInfo"></div></td></tr>
+	</table>
+</body>
+</html>
