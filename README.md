@@ -7,7 +7,7 @@ AstroTimeline is a BSD-licensed Javascript class for plotting a timeline on a we
 AstroTimline can be configured for a particular location and time zone, and will display properly no matter the time zone of the browser accessing the web page. Thus it is useful for local astronomy activites as well as remotely-controlled operations.
 
 ## Timline Display
-[Example timeline](rcroman.github.com/AstroTimeline/example_timeline.png)
+[Example timeline](https://github.com/rcroman/AstroTimeline/blob/master/example_timeline.png?raw=true)
 
 The timeline spans from an hour before sunset on the left to an hour after sunrise on the right. Sunrise and sunset times are indicated by yellow markers, with the times displayed above. Similarly, astronomical twilight times are indicated by blue markers with their respective times. Civil and nautical twilight times are indicated by smaller markers after sunset and before sunrise. If the moon rises or sets during the period covered by the timeline, gray markers will appear at appropriate locations, along with the relevant times, displayed above the markers.
 
