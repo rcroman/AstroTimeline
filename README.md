@@ -40,11 +40,17 @@ Finally, in the `<body>` tag itself, add `onLoad` code to actually create the ti
 Parameters:
 
 *`lat`: Latitude of observing location in decimal degrees, e.g., 32.90
+
 *`lon`: Longitude of observing location in decimal degrees, e.g., -105.53 (use negative numbers for locations in the western hemisphere)
+
 *`alt`: Altitude of observing location, in meters above mean sea level
+
 *`timeZone`: Time zone of observing location, e.g., `'US/Mountain'`. Supported time zone strings are depending on the implementation of JavaScript running on whatever browser views the page, but generally conform to the IANA time zone database. Be sure to use a time zone string that will take into account daylight savings time, if applicable to your location. Other examples include `'US/Central'`, `'US/Pacific'`, etc. Default is `'US/Mountain'`. No checking of the consistency of the `timeZone` and `lat`/`lon` parameters is performed.
+
 *`locale`: The locale code used for rendering time information. Examples include `'en-US'` for 12-hour time (AM/PM), and `'en-GB'` for 24-hour time. AstroTimeline has only been tested with `'en-US'` and `'en-GB'`. Please report any bugs with using other locales. Default is `'en-US'`.
+
 *`rolloverHour`: Upon reloading the page in the browser after this hour of the day, the timeline will be re-drawn for the following night. Defaults to 8am.
+
 *`divID`: The ID of the <div> element where you want the timeline drawn. Defaults to `'astrotimeline'`.
 
 ## Notes on Times
