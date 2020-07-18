@@ -14,25 +14,25 @@ The timeline spans from an hour before sunset on the left to an hour after sunri
 The color of the timline indicates sky brightness in a qualitative sense. When the moon rises, for instance, the timeline color will change from dark blue to gray. No attempt has been made to make the timeline color quantitatively accurate, so the color will be the same shade of gray when the moon is up regardless of the moon's current illumination.
 
 ## Browser Compatibility
-AstroTimeline should be compatible with any browser that 1) supports JavaScript, and 2) supports the HTML <canvas> element. As of this writing, this includes at least Edge, Safari, Chrome, and Firefox.
+AstroTimeline should be compatible with any browser that 1) supports JavaScript, and 2) supports the HTML `<canvas>` element. As of this writing, this includes at least Edge, Safari, Chrome, and Firefox.
 
 ## Installation
 Place the downloaded files wherever you like on your web server. Be sure to choose a location that will be accessible via the html page that will contain the timeline. You can test the functionality of your installation by pointing a browser at the test.html page.
 
-On the html page where you wish the timeline to appear, place the following lines in the <head> section, replacing <path> with whatever is appropriate to where you placed the astrotimeline files on your web server:
+On the html page where you wish the timeline to appear, place the following lines in the `<head>` section, replacing `<path>` with whatever is appropriate to where you placed the astrotimeline files on your web server:
 
 ```
 <script language="javascript" src="<path>suncalc.js"></script>
 <script language="javascript" src="<path>astrotimeline.js"></script>
 ```
-In the <body> section of the page, place a <div> element where you want the timeline to appear. It is recommended to place this <div> element inside another element that specifies how wide you want the timeline to appear. Give the <div> element a unique ID. For example:
+In the `<body>` section of the page, place a `<div>` element where you want the timeline to appear. It is recommended to place this `<div>` element inside another element that specifies how wide you want the timeline to appear. Give the `<div>` element a unique ID. For example:
 
 ```
 <table width="800">
     <tr><td><div id="astrotimeline"></div></td></tr>
 </table>
 ```
-Finally, in the <body> tag itself, add onLoad code to actually create the timeline object and start  real-time updates of the current-time pointer. This is also where you can specify the observing location and time zone. For example:
+Finally, in the `<body>` tag itself, add `onLoad` code to actually create the timeline object and start real-time updates of the current-time pointer. This is also where you can specify the observing location and time zone. For example:
 
 ```
 <body onLoad="var tl = new AstroTimeline(lat, lon, alt, timeZone, locale, rolloverHour, divID);">
