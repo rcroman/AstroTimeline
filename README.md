@@ -9,9 +9,9 @@ AstroTimline can be configured for a particular location and time zone, and will
 ## Timeline Display
 ![Example timeline](https://github.com/rcroman/AstroTimeline/blob/master/example_timeline.png?raw=true)
 
-The timeline spans from an hour before sunset on the left to an hour after sunrise on the right. Sunrise and sunset times are indicated by yellow markers, with the times displayed above. Similarly, astronomical twilight times are indicated by blue markers with their respective times. Civil and nautical twilight times are indicated by smaller markers after sunset and before sunrise. If the moon rises or sets during the period covered by the timeline, gray markers will appear at appropriate locations, along with the relevant times displayed above the markers.
+The timeline spans from an hour before sunset on the left to an hour after sunrise on the right. Sunrise and sunset times are indicated by orange markers, with the times displayed above. Similarly, astronomical twilight times are indicated by blue markers with their respective times. Civil and nautical twilight times are indicated by smaller markers after sunset and before sunrise. If the moon rises or sets during the period covered by the timeline, gray markers will appear at appropriate locations, along with the relevant times displayed above the markers.
 
-The color of the timline indicates sky brightness in a qualitative sense. When the moon rises, for instance, the timeline color will change from dark blue to gray. No attempt has been made to make the timeline color quantitatively accurate, so the color will be the same shade of gray when the moon is up regardless of the moon's current illumination.
+The color of the timeline indicates sky brightness in a qualitative sense. When the moon rises, for instance, the timeline color will change from dark blue to gray. No attempt has been made to make the timeline color quantitatively accurate, so the color will be the same shade of gray when the moon is up regardless of the moon's current illumination.
 
 ## Browser Compatibility
 AstroTimeline should be compatible with any browser that 1) supports JavaScript, and 2) supports the HTML `<canvas>` element. As of this writing, this includes at least Edge, Safari, Chrome, and Firefox.
