@@ -48,7 +48,7 @@ Parameters:
 - `divID`: The ID of the `<div>` element where you want the timeline drawn. Defaults to `'astrotimeline'`.
 
 ## Notes on Times
-Sunset and sunrise times are calculated using the latitude, longitude, altitude, and time zone specified when creating the AstroTimline object. Twilight times are calculated using sea-level altitude since that is primarily what matters with respect to sky darkness. Moon rise and set times currently ignore the altitude parameter, primarily because the SunCalc library currently does the same. 
+Sunset and sunrise times are calculated using the latitude, longitude, altitude, and time zone specified when creating the AstroTimeline object. Twilight times are calculated using sea-level altitude since that is primarily what matters with respect to sky darkness. Moon rise and set times currently ignore the altitude parameter, primarily because the SunCalc library currently does the same. 
 
 ## Change Log
 
