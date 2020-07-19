@@ -4,7 +4,7 @@ AstroTimeline – The Astronomer's Timeline
 
 AstroTimeline is a BSD-licensed Javascript class for plotting a timeline on a web page showing key times througout the night along with a pointer for the current time. The color of the timeline qualitatively indicates sky darkness. It is intended to be used by astronomers who need to know when the sky will be truly dark, when the moon sets or rises, etc., to plan their observing or photography activities. It was created by Russell Croman, and leverages the SunCalc library by Vladimir Agafonkin for performing the astronomical computations. See the LICENSE.txt and LICENSE-suncalc.txt files for information on the BSD licensing terms.
 
-AstroTimline can be configured for a particular location and time zone, and will display properly no matter the time zone of the browser accessing the web page. Thus it is useful for local astronomy activites as well as remotely-controlled operations.
+AstroTimeline can be configured for a particular location and time zone, and will display properly no matter the time zone of the browser accessing the web page. Thus it is useful for local astronomy activites as well as remotely-controlled operations.
 
 ## Timeline Display
 ![Example timeline](https://github.com/rcroman/AstroTimeline/blob/master/example_timeline.png?raw=true)
